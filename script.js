@@ -1,11 +1,15 @@
 // Your script here.
-let speak = getElementById("speak")
-let stop = getElementById("stop")
+let speak = document.getElementById("speak")
+let stop = document.getElementById("stop")
+var p = speechSynthesis.getVoices();
+console.log(p);
+voices.map((voice)=>{
+	document.getElementById("voices").appendChild = "<option>"+voice+"</option>"
+})
 
 speak.addEventListener("click", (e)=>{
-	let text = getElementById("text").value
-	let utterance = new speechSynthesisUtterance();
+	var text = document.getElementById("text").value;
+	let utterance = new SpeechSynthesisUtterance();
 	utterance.text = text;
-	text.value = "hi i am nadeem"
 	speechSynthesis.speak(utterance);
 })
